@@ -1,0 +1,16 @@
+%% ASSUMPTION: no real cabling plan available, routes and rooms are invented.
+graph LR
+    subgraph LOCA [Technical room A, building A]
+        CCA[CC-A]
+        UPSA[UPS A]
+    end
+    subgraph LOCB [Technical room B, building B]
+        CCB[CC-B]
+        UPSB[UPS B]
+    end
+    PEN[Shared wall penetration, building B]
+    UPSA --- CCA
+    UPSB --- CCB
+    CCA ---|route 1 - north technical gallery| PEN
+    CCA ---|route 2 - south outer facade| PEN
+    PEN --- CCB
